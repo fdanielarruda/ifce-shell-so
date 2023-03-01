@@ -18,18 +18,16 @@ void type_prompt() {
 
 void read_command(char* params[]) {
     fflush(stdout);
-
     fgets(line, MAX_LINE, stdin);
 
+    // PROCESSO PARA TRANSFORMAR A LINHA DIGITADA EM UM VETOR
     int i = 0;
     params[i] = strtok(line, " \n");
 
-    while (params[i] != NULL) {
+    while (params[i]) {
         i++;
         params[i] = strtok(NULL, " \n");
     }
-
-    params[i] = NULL;
 }
 
 // EXECUÇÃO DO PROGRAMA
@@ -60,6 +58,6 @@ int main() {
             exit(EXIT_FAILURE);
         }
     }
-
+    
     return 0;
 }
